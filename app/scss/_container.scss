@@ -1,0 +1,14 @@
+.container{
+    margin: 0 auto;
+    &.--s{
+        max-width: 1272px;
+        padding: 36px 0;
+    }
+    &.--m{
+        max-width: 1472px;
+        padding: 16px 0;
+    }
+    &.--f{
+        max-width: 1920px;
+    }
+}
