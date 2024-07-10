@@ -1,0 +1,18 @@
+.container{
+    margin: 0 auto;
+    &.--s{
+        max-width: 1272px;
+        padding: 0 36px;
+    }
+    &.--m{
+        max-width: 1472px;
+        padding: 0 16px;
+    }
+    &.--l{
+        max-width: 1648px;
+        padding: 0 24px;
+    }
+    &.--f{
+        max-width: 1920px;
+    }
+}

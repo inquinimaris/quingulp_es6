@@ -1,0 +1,67 @@
+@import "libs";
+@import "fonts";
+@import "vars";
+@import "resets";
+@import "utilities";
+@import "container";
+
+html{
+    box-sizing: border-box;
+    font-family: $font_family_primary;
+    font-size: 16px;
+    color: $text_primary;
+    overflow-x: hidden;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: $body_background;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: $font_family_secondary;
+    font-weight: 500;
+}
+
+.input{
+    &::placeholder{
+        color: $text_placeholder;
+    }
+    &_text{
+        
+    }
+    &_tel{
+        
+    }
+    &_email{
+
+    }
+}
+
+.cookie{
+    position: fixed;
+    z-index: 5;
+    bottom: 5dvh;
+    left: 40px;
+    @include flex-col-center;
+}
+
+.popup{
+    max-width: 440px;
+}
+
+// Slick Slider duct tape for gaps
+// between slides as follows:
+// 
+// .slick-slide {
+//     margin: 0 23px;
+// }
+// .slick-list {
+//     margin: 0 -23px;
+// }
