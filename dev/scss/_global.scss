@@ -1,9 +1,10 @@
-@import "libs";
-@import "fonts";
-@import "vars";
-@import "resets";
-@import "utilities";
-@import "container";
+@forward "libs";
+@forward "fonts";
+@forward "vars";
+@use "vars" as *;
+@forward "resets";
+@forward "utilities";
+@forward "container";
 
 html{
     box-sizing: border-box;

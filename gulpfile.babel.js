@@ -1,6 +1,7 @@
 import gulp from 'gulp';
 import run from 'gulp-run';
-import { task, src, dest, watch, parallel, series } from 'gulp';
+import gulpStuff from 'gulp';
+const { task, src, dest, watch, parallel, series } = gulpStuff;
 import dartSass from 'sass';
 import gulpSass from 'gulp-sass';
 import sourcemaps from 'gulp-sourcemaps';
@@ -35,7 +36,7 @@ task('scss_to_css', function(){
 task('build_libs_css', function(){
   return src([
     'node_modules/normalize.css/normalize.css',
-    // 'node_modules/slick-carousel/slick/slick.css',
+    'node_modules/slick-carousel/slick/slick.css',
     'node_modules/magnific-popup/dist/magnific-popup.css'
     ])
     .pipe(concat('_libs.scss'))
@@ -48,7 +49,7 @@ task('build_libs_css', function(){
 task('build_libs_js', function(){
   return src([
     'node_modules/lozad/dist/lozad.min.js',
-    // 'node_modules/slick-carousel/slick/slick.js',
+    'node_modules/slick-carousel/slick/slick.js',
     'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
     // 'node_modules/simple-parallax-js/dist/simpleParallax.min.js'
   ])
@@ -108,7 +109,8 @@ task('validate_html', function(){
 task('watch', function(){
   watch(['dev/*.pug', 'dev/components/*.pug', 'dev/blocks/**/*.pug'], parallel('pug_to_html'));
   watch('dev/scss/**/*.scss', parallel('scss_to_css'));
-  watch('dev/*.html', parallel('watch_html', 'validate_html'));
+  // temporary disabled cause of some java issue on my end
+  // watch('dev/*.html', parallel('watch_html', 'validate_html'));
   watch('dev/js/*.js', parallel('watch_js'));
 });
 
@@ -146,4 +148,5 @@ task('export', async function(){
 task('build', series('clean', 'export'));
 
 // Launch command: 'gulp'
-task('default', parallel('build_libs_css', 'scss_to_css', 'watch_html', 'watch_js', 'build_libs_js', 'browser-sync', 'watch'));
+// task('default', parallel('build_libs_css', 'scss_to_css', 'watch_html', 'watch_js', 'build_libs_js', 'browser-sync', 'watch'));
+task('default', parallel('build_libs_css', 'scss_to_css', 'watch_js', 'build_libs_js', 'browser-sync', 'watch'));
