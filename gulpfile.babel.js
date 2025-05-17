@@ -11,7 +11,7 @@ import concat from 'gulp-concat';
 import rename from 'gulp-rename';
 import browserSync from 'browser-sync';
 import { init, reload } from 'browser-sync';
-import { sync } from 'del';
+import { deleteSync } from 'del';
 import autoprefixer from 'gulp-autoprefixer';
 import pug from 'gulp-pug';
 import nu from 'gulp-html';
@@ -21,7 +21,7 @@ import nu from 'gulp-html';
 task('scss_to_css', function(){
   return src('dev/scss/**/*.scss')
     .pipe(sourcemaps.init())
-    .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
+    .pipe(sass.sync({style: 'compressed'}).on('error', sass.logError))
     .pipe(autoprefixer({
       overrideBrowserslist: ['last 2 versions']
     }))
@@ -60,7 +60,7 @@ task('build_libs_js', function(){
 });
 // watches for JS changes, reloads page if there was any.
 task('watch_js', function(){
-  return src('dev/js/*.js')
+  return src(['dev/**/*.js'])
   .pipe(browserSync.reload({stream: true}));
 });
 
@@ -100,24 +100,24 @@ task('browser-sync', function() {
 //   })
 // });
 
-task('validate_html', function(){
-  return src('dev/*.html')
-    .pipe(nu());
-});
+// task('validate_html', function(){
+//   return src('dev/*.html')
+//     .pipe(nu());
+// });
 
 // Watcher function.
 task('watch', function(){
   watch(['dev/*.pug', 'dev/components/*.pug', 'dev/blocks/**/*.pug'], parallel('pug_to_html'));
-  watch('dev/scss/**/*.scss', parallel('scss_to_css'));
+  watch(['dev/scss/**/*.scss'], parallel('scss_to_css'));
   // temporary disabled cause of some java issue on my end
   // watch('dev/*.html', parallel('watch_html', 'validate_html'));
-  watch('dev/js/*.js', parallel('watch_js'));
+  watch(['dev/**/*.js'], parallel('watch_js'));
 });
 
 // Deletes previous dist version to build 
 // actual version without previous trash.
 task('clean', async function(){
-  del.sync('dist');
+  deleteSync(['dist']);
 });
 
 // Building tasks.
