@@ -15,6 +15,7 @@ import { deleteSync } from 'del';
 import autoprefixer from 'gulp-autoprefixer';
 import pug from 'gulp-pug';
 import nu from 'gulp-html';
+import { exec } from 'child_process';
 
 // Writes sourcemaps and converts SCSS to CSS 
 // into separate folder.
@@ -36,8 +37,9 @@ task('scss_to_css', function(){
 task('build_libs_css', function(){
   return src([
     'node_modules/normalize.css/normalize.css',
-    'node_modules/slick-carousel/slick/slick.css',
-    'node_modules/magnific-popup/dist/magnific-popup.css'
+    'node_modules/@splidejs/splide/dist/css/splide-core.min.css'
+    // 'node_modules/slick-carousel/slick/slick.css',
+    // 'node_modules/magnific-popup/dist/magnific-popup.css'
     ])
     .pipe(concat('_libs.scss'))
     .pipe(dest('dev/scss'))
@@ -46,22 +48,25 @@ task('build_libs_css', function(){
 
 // builds external plugins JS libraries used.
 // You have to manually add path to plugin's JS if there is any.
-task('build_libs_js', function(){
-  return src([
-    'node_modules/lozad/dist/lozad.min.js',
-    'node_modules/slick-carousel/slick/slick.js',
-    'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
-    // 'node_modules/simple-parallax-js/dist/simpleParallax.min.js'
-  ])
-    .pipe(concat('libs.min.js'))
-    .pipe(uglify())
-    .pipe(dest('dev/assets/js'))
-    .pipe(browserSync.reload({stream: true}));
-});
-// watches for JS changes, reloads page if there was any.
-task('watch_js', function(){
-  return src(['dev/**/*.js'])
-  .pipe(browserSync.reload({stream: true}));
+// task('build_libs_js', function(){
+//   return src([
+//     // 'node_modules/lozad/dist/lozad.min.js',
+//     // 'node_modules/slick-carousel/slick/slick.js',
+//     // 'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
+//     // 'node_modules/simple-parallax-js/dist/simpleParallax.min.js'
+//   ])
+//     .pipe(concat('libs.min.js'))
+//     .pipe(uglify())
+//     .pipe(dest('dev/assets/js'))
+//     .pipe(browserSync.reload({stream: true}));
+// });
+task('rollup', cb => {
+  exec('npx rollup -c', (err, stdout, stderr) => {
+    console.log(stdout);
+    console.error(stderr);
+    browserSync.reload();
+    cb(err);
+  });
 });
 
 // watches for HTML changes, reloads page if there was any.
@@ -111,7 +116,7 @@ task('watch', function(){
   watch(['dev/scss/**/*.scss'], parallel('scss_to_css'));
   // temporary disabled cause of some java issue on my end
   // watch('dev/*.html', parallel('watch_html', 'validate_html'));
-  watch(['dev/**/*.js'], parallel('watch_js'));
+  watch(['dev/**/*.js', '!dev/**/bundle.js'], series('rollup'));
 });
 
 // Deletes previous dist version to build 
@@ -149,4 +154,4 @@ task('build', series('clean', 'export'));
 
 // Launch command: 'gulp'
 // task('default', parallel('build_libs_css', 'scss_to_css', 'watch_html', 'watch_js', 'build_libs_js', 'browser-sync', 'watch'));
-task('default', parallel('build_libs_css', 'scss_to_css', 'watch_js', 'build_libs_js', 'browser-sync', 'watch'));
+task('default', parallel('build_libs_css', 'scss_to_css', 'browser-sync', 'watch'));

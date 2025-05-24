@@ -28,9 +28,13 @@
     "gulp-tinypng-compress": "^1.2.5",
     "gulp-uglify": "^3.0.2",
     "normalize.css": "^8.0.1",
+    "rollup": "^4.41.1",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
     "sass": "^1.89.0"
   },
   "dependencies": {
+    "@splidejs/splide": "^4.1.4",
     "lozad": "^1.16.0",
     "magnific-popup": "^1.2.0",
     "simple-parallax-js": "^5.6.2",
