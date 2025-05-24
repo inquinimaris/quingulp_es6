@@ -2,7 +2,7 @@ import gulp from 'gulp';
 import run from 'gulp-run';
 import gulpStuff from 'gulp';
 const { task, src, dest, watch, parallel, series } = gulpStuff;
-import dartSass from 'sass';
+import * as dartSass from 'sass';
 import gulpSass from 'gulp-sass';
 import sourcemaps from 'gulp-sourcemaps';
 const sass = gulpSass( dartSass );
