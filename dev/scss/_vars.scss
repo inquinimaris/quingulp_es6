@@ -19,30 +19,3 @@ $text_primary: #2D2D2D;
 $text_placeholder: #B7B4D3;
 
 $input_background: #E8E5FB;
-
-@mixin mx-auto{
-    margin: 0 auto;
-}
-
-@mixin grid-center{
-    display: grid;
-    place-items: center;
-}
-@mixin grid-cols($repeat, $value){
-    display: grid;
-    grid-template-columns: repeat($repeat, $value);
-}
-
-@mixin flex-col-center{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-@mixin flex-row-center{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
