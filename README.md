@@ -1,5 +1,9 @@
 # Just a frontend task-runner, v5
 
+# How it's different from main branch
+Uses Rollup for modern libraries and utilizes ESM instead of CommonJS (though yeah, it still compiles down to CommonJS I think?). 
+jQuery been ditched.
+
 ## Things used:
 + Pug/Jade and SCSS preprocessors for HTML and CSS respectively;
 + HTML validation;
