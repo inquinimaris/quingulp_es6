@@ -14,7 +14,7 @@ block content
                         while i < 5
                             li.splide__slide
                                 .splide__slide-image.image.contain
-                                    img(src=`./assets/img/splide-${i}.webp`, alt=`Splide image ${i}`)
+                                    img.lazyload(src="./assets/img/featherwing.webp" data-src=`./assets/img/splide-${i}.webp`, alt=`Splide image ${i}`)
                             - i++
             section.fancybox-gallery
                 h2 Fancybox gallery
@@ -22,7 +22,7 @@ block content
                     - i = 1;
                     while i < 9
                         a.fancybox-gallery-item.image.cover(data-fancybox="gallery" data-src=`./assets/img/fancybox-${i}.webp` data-caption=`Image ${i}`)
-                            img(src=`./assets/img/fancybox-${i}.webp`, alt=`Gallery image ${i}`)
+                            img.lazyload(src="./assets/img/featherwing.webp" data-src=`./assets/img/fancybox-${i}.webp`, alt=`Gallery image ${i}`)
                         - i++
             section.fancybox-inline
                 h2 Fancybox inline modal with custom content
@@ -31,6 +31,6 @@ block content
                     .popup-inner
                         h2 Echo Anya did this~
                         .image.cover
-                            img(src="./assets/img/Echo-2.webp" alt="Her majesty")
+                            img.lazyload(src="./assets/img/featherwing.webp" data-src="./assets/img/Echo-2.webp" alt="Her majesty")
                         p And she did it with style, baby~
                         button.button(data-fancybox-close) Close

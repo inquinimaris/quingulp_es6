@@ -117,7 +117,7 @@ task('watch', function(){
   watch(['dev/scss/**/*.scss'], parallel('scss_to_css'));
   // temporary disabled cause of some java issue on my end
   // watch('dev/*.html', parallel('watch_html', 'validate_html'));
-  watch(['dev/**/*.js', '!dev/**/bundle.js'], series('rollup'));
+  watch(['dev/**/*.js', '!dev/**/*.bundle.js'], series('rollup'));
 });
 
 // Deletes previous dist version to build 

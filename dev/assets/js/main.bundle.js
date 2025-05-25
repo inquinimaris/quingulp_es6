@@ -3252,4 +3252,4 @@
     Oe.bind('[data-fancybox]', {});
 
 })();
-//# sourceMappingURL=bundle.js.map
+//# sourceMappingURL=main.bundle.js.map

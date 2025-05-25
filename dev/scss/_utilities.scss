@@ -7,11 +7,12 @@
         height: 100%;
         object-position: center;
         position: relative;
+        will-change: opacity;
+        transition: opacity 0.3s ease-in;
     }
-    &:has(.lazy:not([data-loaded="true"])) {
-        img.lazy {
+    &:has(.lazyload:not(.lazyloaded)) {
+        img.lazyload {
             opacity: 0;
-            transition: opacity 0.3s ease-in;
             z-index: 1;
         }
         &::after {
@@ -33,8 +34,8 @@
             z-index: 2;
         }
     }
-    &:has(.lozad) {
-        img.lozad[data-loaded="true"] {
+    &:has(.lazyload) {
+        img.lazyloaded {
             opacity: 1;
             z-index: 3;
         }
