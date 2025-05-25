@@ -1,3 +1,60 @@
+.image {
+    position: relative;
+    overflow: hidden;
+    & img {
+        display: block !important;
+        width: 100%;
+        height: 100%;
+        object-position: center;
+        position: relative;
+    }
+    &:has(.lazy:not([data-loaded="true"])) {
+        img.lazy {
+            opacity: 0;
+            transition: opacity 0.3s ease-in;
+            z-index: 1;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(155,155,155,0.15);
+            background-image: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0) 100%), url('assets/img/placeholder.webp');
+            background-size: 30% 100%, contain;
+            background-repeat: no-repeat;
+            background-position-x: 100%, center;
+            background-position-y: 100%, center;
+            animation: shimmer 1.5s infinite linear;
+            z-index: 2;
+        }
+    }
+    &:has(.lozad) {
+        img.lozad[data-loaded="true"] {
+            opacity: 1;
+            z-index: 3;
+        }
+    }
+    &.cover img {
+        object-fit: cover;
+    }
+    &.contain img {
+        object-fit: contain;
+    }
+}
+@keyframes shimmer {
+    from {
+        background-position-x: 150%, center;
+    }
+    to {
+        background-position-x: -150%, center;
+    }
+}
+
 .--font{
     &-light{
         font-weight: 300;

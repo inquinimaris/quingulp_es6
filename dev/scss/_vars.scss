@@ -10,12 +10,11 @@
 // $background: #b00b69;
 
 $white: #F7FFFB;
-$body_background: #F5F4FF;
+$black: #2D2D2D;
+$body_background: $black;
 
 $font_family_primary: "Roboto";
 $font_family_secondary: "Raleway";
-
-$text_primary: #2D2D2D;
-$text_placeholder: #B7B4D3;
-
-$input_background: #E8E5FB;
+$color_text_primary: $white;
+$color_accent: #3f76f0;
+$color_accent_hover: #1656e0;

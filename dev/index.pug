@@ -1,16 +1,36 @@
 extends layout
 block content
     main.main
-        h1 See me? Good.
-        h2 Means it's working.
-        h3 I hope.
-        <section class="splide" aria-labelledby="carousel-heading">
-            <h2 id="carousel-heading">Splide Basic HTML Example</h2>
-            <div class="splide__track">
-                <ul class="splide__list">
-                    <li class="splide__slide">Slide 01</li>
-                    <li class="splide__slide">Slide 02</li>
-                    <li class="splide__slide">Slide 03</li>
-                </ul>
-            </div>
-        </section>
+        .container.--m
+            section.intro
+                h1 See me? Good.
+                h2 Means it's working.
+                h3 Here are some examples.
+            section.splide(aria-labelledby="splide-heading")
+                h2#splide-heading Splide Basic HTML Example
+                div.splide__track
+                    - let i = 1;
+                    ul.splide__list
+                        while i < 5
+                            li.splide__slide
+                                .splide__slide-image.image.contain
+                                    img(src=`./assets/img/splide-${i}.webp`, alt=`Splide image ${i}`)
+                            - i++
+            section.fancybox-gallery
+                h2 Fancybox gallery
+                .fancybox-gallery-inner
+                    - i = 1;
+                    while i < 9
+                        a.fancybox-gallery-item.image.cover(data-fancybox="gallery" data-src=`./assets/img/fancybox-${i}.webp` data-caption=`Image ${i}`)
+                            img(src=`./assets/img/fancybox-${i}.webp`, alt=`Gallery image ${i}`)
+                        - i++
+            section.fancybox-inline
+                h2 Fancybox inline modal with custom content
+                button.button(data-fancybox data-src="#echos-fb-content" style="display:block;margin:0 auto;") Open Echo's Popup
+                div#echos-fb-content.popup
+                    .popup-inner
+                        h2 Echo Anya did this~
+                        .image.cover
+                            img(src="./assets/img/Echo-2.webp" alt="Her majesty")
+                        p And she did it with style, baby~
+                        button.button(data-fancybox-close) Close

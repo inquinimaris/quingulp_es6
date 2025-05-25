@@ -15,18 +15,49 @@
 </head><body>
 <header class="header"></header>
 <main class="main">
-  <h1>See me? Good.</h1>
-  <h2>Means it's working.</h2>
-  <h3>I hope.</h3><section class="splide" aria-labelledby="carousel-heading">
-<h2 id="carousel-heading">Splide Basic HTML Example</h2>
-<div class="splide__track">
-<ul class="splide__list">
-<li class="splide__slide">Slide 01</li>
-<li class="splide__slide">Slide 02</li>
-<li class="splide__slide">Slide 03</li>
-</ul>
-</div>
-</section>
+  <div class="container --m">
+    <section class="intro">
+      <h1>See me? Good.</h1>
+      <h2>Means it's working.</h2>
+      <h3>Here are some examples.</h3>
+    </section>
+    <section class="splide" aria-labelledby="splide-heading">
+      <h2 id="splide-heading">Splide Basic HTML Example</h2>
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <div class="splide__slide-image image contain"><img src="./assets/img/splide-1.webp" alt="Splide image 1"></div>
+          </li>
+          <li class="splide__slide">
+            <div class="splide__slide-image image contain"><img src="./assets/img/splide-2.webp" alt="Splide image 2"></div>
+          </li>
+          <li class="splide__slide">
+            <div class="splide__slide-image image contain"><img src="./assets/img/splide-3.webp" alt="Splide image 3"></div>
+          </li>
+          <li class="splide__slide">
+            <div class="splide__slide-image image contain"><img src="./assets/img/splide-4.webp" alt="Splide image 4"></div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="fancybox-gallery">
+      <h2>Fancybox gallery</h2>
+      <div class="fancybox-gallery-inner"><a class="fancybox-gallery-item image cover" data-fancybox="gallery" data-src="./assets/img/fancybox-1.webp" data-caption="Image 1"><img src="./assets/img/fancybox-1.webp" alt="Gallery image 1"></a><a class="fancybox-gallery-item image cover" data-fancybox="gallery" data-src="./assets/img/fancybox-2.webp" data-caption="Image 2"><img src="./assets/img/fancybox-2.webp" alt="Gallery image 2"></a><a class="fancybox-gallery-item image cover" data-fancybox="gallery" data-src="./assets/img/fancybox-3.webp" data-caption="Image 3"><img src="./assets/img/fancybox-3.webp" alt="Gallery image 3"></a><a class="fancybox-gallery-item image cover" data-fancybox="gallery" data-src="./assets/img/fancybox-4.webp" data-caption="Image 4"><img src="./assets/img/fancybox-4.webp" alt="Gallery image 4"></a><a class="fancybox-gallery-item image cover" data-fancybox="gallery" data-src="./assets/img/fancybox-5.webp" data-caption="Image 5"><img src="./assets/img/fancybox-5.webp" alt="Gallery image 5"></a><a class="fancybox-gallery-item image cover" data-fancybox="gallery" data-src="./assets/img/fancybox-6.webp" data-caption="Image 6"><img src="./assets/img/fancybox-6.webp" alt="Gallery image 6"></a><a class="fancybox-gallery-item image cover" data-fancybox="gallery" data-src="./assets/img/fancybox-7.webp" data-caption="Image 7"><img src="./assets/img/fancybox-7.webp" alt="Gallery image 7"></a><a class="fancybox-gallery-item image cover" data-fancybox="gallery" data-src="./assets/img/fancybox-8.webp" data-caption="Image 8"><img src="./assets/img/fancybox-8.webp" alt="Gallery image 8"></a>
+      </div>
+    </section>
+    <section class="fancybox-inline">
+      <h2>Fancybox inline modal with custom content</h2>
+      <button class="button" data-fancybox data-src="#echos-fb-content" style="display:block;margin:0 auto;">Open Echo's Popup</button>
+      <div class="popup" id="echos-fb-content">
+        <div class="popup-inner">
+          <h2>Echo Anya did this~</h2>
+          <div class="image cover"><img src="./assets/img/Echo-2.webp" alt="Her majesty"></div>
+          <p>And she did it with style, baby~</p>
+          <button class="button" data-fancybox-close>Close</button>
+        </div>
+      </div>
+    </section>
+  </div>
 </main>
 <footer class="footer">
   <script src="./assets/js/bundle.js"> </script>

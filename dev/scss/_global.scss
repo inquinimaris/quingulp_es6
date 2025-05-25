@@ -5,12 +5,13 @@
 @forward "resets";
 @forward "utilities";
 @forward "container";
+@forward "default";
 
 html{
     box-sizing: border-box;
     font-family: $font_family_primary;
     font-size: 16px;
-    color: $text_primary;
+    color: $color_text_primary;
     overflow-x: hidden;
 }
 *, *::before, *::after {
@@ -32,7 +33,8 @@ h1, h2, h3, h4, h5, h6{
 
 .input{
     &::placeholder{
-        color: $text_placeholder;
+        color: $color_text_primary;
+        opacity: 0.6;
     }
     &_text{
         
@@ -48,27 +50,39 @@ h1, h2, h3, h4, h5, h6{
     }
 }
 
-.cookie{
-    position: fixed;
-    z-index: 5;
-    bottom: 5dvh;
-    left: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.button{
+    padding: 12px 24px;
+    background-color: $color_accent;
+    cursor: pointer;
+    &:hover{
+        background-color: $color_accent_hover;
+    }
+    color: $color_text_primary;
 }
+
+// .cookie{
+//     position: fixed;
+//     z-index: 5;
+//     bottom: 5dvh;
+//     left: 40px;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+// }
 
 .popup{
+    display: none;
     max-width: 440px;
+    color: currentColor;
+    background-color: $body_background;
+    border-radius: 8px;
+    border: 1px solid $white;
+    &-inner{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        row-gap: 12px;
+    }
 }
-
-// Slick Slider duct tape for gaps
-// between slides as follows:
-// 
-// .slick-slide {
-//     margin: 0 23px;
-// }
-// .slick-list {
-//     margin: 0 -23px;
-// }

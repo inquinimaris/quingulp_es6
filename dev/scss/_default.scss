@@ -1,0 +1,42 @@
+// it's used for initial example page, nothing else.
+main{
+    padding-top: 32px;
+    margin-bottom: 32px;
+}
+h1{
+    margin-bottom: 8px;
+}
+h2{
+    margin-bottom: 6px;
+}
+section{
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+section h2{
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.intro{
+    text-align: center;
+}
+
+.splide__slide-image{
+    height: 100%;
+}
+
+.fancybox{
+    &-gallery{
+        &-inner{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            column-gap: 16px;
+            row-gap: 16px;
+        }
+    }
+}
+
+.image img{
+    border-radius: 8px;
+}
