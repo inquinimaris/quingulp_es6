@@ -18,16 +18,38 @@
   <h1>See me? Good.</h1>
   <h2>Means it's working.</h2>
   <h3>I hope.</h3>
+  <div> 
+    <form> 
+      <div>
+        <label for="name">Name</label>
+        <input class="q-input input input_name" id="name" type="text" placeholder="Name" style="display:block;">
+      </div>
+      <div>
+        <label for="tel">Tel</label>
+        <input class="q-input input input_tel" id="tel" type="tel" placeholder="+7 (XXX) XXX-XX-XX" style="display:block;">
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input class="q-input input input_email" id="email" type="text" placeholder="your@mail.ongfr" style="display:block;">
+      </div>
+      <div> 
+        <input class="q-input input_consent" id="consent" type="checkbox" name="q-consent">
+        <label for="consent">Consent</label>
+      </div>
+      <div>
+        <input class="q-input input_promo" id="promo" type="checkbox" name="q-promo">
+        <label for="promo">Promo</label>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
 </main>
-<div class="cookie hidden" id="cookie">
-  <p class="cookie__text">Этот сайт использует <a class="cookie__link" href="/privacy-policy" target="_blank">Cookie</a>.</p>
-  <button class="button" id="accept" type="button">Хорошо</button>
-</div>
 <div class="mfp-hide mfp-with-anim popup" id="popup"></div>
 <footer class="footer">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="assets/js/libs.min.js"> </script>
-  <script src="assets/js/cookie.js"></script>
-  <script src="assets/js/main.js"> </script>
+  <script src="./assets/js/jquery-3.7.1.min.js"></script>
+  <script src="./assets/js/libs.min.js"></script>
+  <script src="./assets/js/main.js"></script>
+  <script src="./assets/js/validation.js"></script>
+  <script src="./assets/js/accordion.js"></script>
 </footer></body>
 </html>

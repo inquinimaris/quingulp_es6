@@ -49,8 +49,9 @@ task('build_libs_css', function(){
 task('build_libs_js', function(){
   return src([
     'node_modules/lozad/dist/lozad.min.js',
-    'node_modules/slick-carousel/slick/slick.js',
-    'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
+    'node_modules/slick-carousel/slick/slick.min.js',
+    'node_modules/magnific-popup/dist/jquery.magnific-popup.min.js',
+    'node_modules/inputmask/dist/jquery.inputmask.min.js',
     // 'node_modules/simple-parallax-js/dist/simpleParallax.min.js'
   ])
     .pipe(concat('libs.min.js'))

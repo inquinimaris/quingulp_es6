@@ -4,3 +4,21 @@ block content
         h1 See me? Good.
         h2 Means it's working.
         h3 I hope.
+        div 
+            form 
+                div
+                    label(for="name") Name
+                    input#name.q-input.input.input_name(type="text" placeholder="Name" style="display:block;")
+                div
+                    label(for="tel") Tel
+                    input#tel.q-input.input.input_tel(type="tel" placeholder="+7 (XXX) XXX-XX-XX" style="display:block;")
+                div
+                    label(for="email") Email
+                    input#email.q-input.input.input_email(type="text" placeholder="your@mail.ongfr" style="display:block;")
+                div 
+                    input#consent.q-input.input_consent(type="checkbox" name="q-consent")
+                    label(for="consent") Consent
+                div
+                    input#promo.q-input.input_promo(type="checkbox" name="q-promo")
+                    label(for="promo") Promo
+                button(type="submit") Submit

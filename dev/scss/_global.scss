@@ -31,6 +31,10 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .input{
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    will-change: border-color;
     &::placeholder{
         color: $text_placeholder;
     }
@@ -43,14 +47,15 @@ h1, h2, h3, h4, h5, h6{
     &_email{
 
     }
+    &.invalid{
+        &[type="checkbox"]{
+            box-shadow: 0 0 0 1px red;
+        }
+        border-color: red;
+    }
 }
-
-.cookie{
-    position: fixed;
-    z-index: 5;
-    bottom: 5dvh;
-    left: 40px;
-    @include flex-col-center;
+button[type="submit"]:disabled{
+    background-color: gray;
 }
 
 .popup{
