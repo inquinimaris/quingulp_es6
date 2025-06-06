@@ -10,7 +10,7 @@ jQuery been ditched.
 + CSS sourcemaps;
 + BrowserSync, for remote view;
 + Couple packages, for sliders, galleries/modals, and LQIP style lazyloading;
-+ Custom form validation for name, phone number and privacy consent;
++ Custom form validation for name, phone, email and consent checkboxes;
 
 ## RTFM:
 ### Preprocessors:
