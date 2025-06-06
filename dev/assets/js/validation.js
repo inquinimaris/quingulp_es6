@@ -26,7 +26,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function checkValidityCheckbox(checkbox) {
-        return checkbox && checkbox.checked;
+        if(!checkbox){
+            return true;
+        }
+        return checkbox.checked;
     }
 
     function validateInputField(element, validator) {
