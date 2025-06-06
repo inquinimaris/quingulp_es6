@@ -115,31 +115,41 @@ $(()=>{
                 });
             }
         });
-        inputName.on('input change', function() {
-            validityState.name = checkValidityName($(this).val().trim());
-            $(this).removeClass('invalid');
-            updateSubmitButton();
-        });
-        inputTel.on('input change', function() {
-            validityState.tel = checkValidityPhone($(this).val().trim());
-            $(this).removeClass('invalid');
-            updateSubmitButton();
-        });
-        inputEmail.on('input change', function() {
-            validityState.email = checkValidityEmail($(this).val().trim());
-            $(this).removeClass('invalid');
-            updateSubmitButton();
-        });
-        inputConsent.on('input change', function() {
-            validityState.consent = checkValidityCheckbox($(this));
-            $(this).removeClass('invalid');
-            updateSubmitButton();
-        });
-        inputPromo.on('input change', function() {
-            validityState.promo = checkValidityCheckbox($(this));
-            $(this).removeClass('invalid');
-            updateSubmitButton();
-        });
+        if(inputName){
+            inputName.on('input change', function() {
+                validityState.name = checkValidityName($(this).val().trim());
+                $(this).removeClass('invalid');
+                updateSubmitButton();
+            });
+        }
+        if(inputTel){
+            inputTel.on('input change', function() {
+                validityState.tel = checkValidityPhone($(this).val().trim());
+                $(this).removeClass('invalid');
+                updateSubmitButton();
+            });
+        }
+        if(inputEmail){
+            inputEmail.on('input change', function() {
+                validityState.email = checkValidityEmail($(this).val().trim());
+                $(this).removeClass('invalid');
+                updateSubmitButton();
+            });
+        }
+        if(inputConsent){
+            inputConsent.on('input change', function() {
+                validityState.consent = checkValidityCheckbox($(this));
+                $(this).removeClass('invalid');
+                updateSubmitButton();
+            });
+        }
+        if(inputPromo){
+            inputPromo.on('input change', function() {
+                validityState.promo = checkValidityCheckbox($(this));
+                $(this).removeClass('invalid');
+                updateSubmitButton();
+            });
+        }
     });
     
 });
