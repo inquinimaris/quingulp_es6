@@ -17,6 +17,7 @@ jQuery been ditched.
 + [Pug](https://pugjs.org/api/getting-started.html)
 + [SCSS](https://sass-lang.com/documentation/syntax/)
 ### JS packages in bundle:
++ [imask](https://imask.js.org/)
 + [Lazysizes](https://afarkas.github.io/lazysizes/index.html)
 + [Fancybox](https://fancyapps.com/fancybox/)
 + [Splide](https://splidejs.com/)

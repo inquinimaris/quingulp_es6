@@ -34,3 +34,22 @@ block content
                             img.lazyload(src="./assets/img/featherwing.webp" data-src="./assets/img/Echo-2.webp" alt="Her majesty")
                         p And she did it with style, baby~
                         button.button(data-fancybox-close) Close
+            section.forms
+                h2 Forms/inputs custom validation preset
+                form.form 
+                    div.input-wrapper
+                        label.label(for="name") Name, only letters and ' -
+                        input#name.input.input_name(type="text")
+                    div.input-wrapper
+                        label.label(for="tel") Phone number in specific format
+                        input#tel.input.input_tel(type="tel")
+                    div.input-wrapper
+                        label.label(for="email") Email, RFC compliant check
+                        input#email.input.input_email(type="email")
+                    div.input-wrapper.input-wrapper_checkbox
+                        input#consent.input_consent(type="checkbox")
+                        label.label(for="consent") Policy consent
+                    div.input-wrapper.input-wrapper_checkbox
+                        input#promo.input_promo(type="checkbox")
+                        label.label(for="promo") Promo consent (same as policy in essence)
+                    button.button(type="submit") Fake submit

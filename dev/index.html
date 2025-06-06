@@ -57,9 +57,38 @@
         </div>
       </div>
     </section>
+    <section class="forms">
+      <h2>Forms/inputs custom validation preset</h2>
+      <form class="form"> 
+        <div class="input-wrapper">
+          <label class="label" for="name">Name, only letters and ' -</label>
+          <input class="input input_name" id="name" type="text">
+        </div>
+        <div class="input-wrapper">
+          <label class="label" for="tel">Phone number in specific format</label>
+          <input class="input input_tel" id="tel" type="tel">
+        </div>
+        <div class="input-wrapper">
+          <label class="label" for="email">Email, RFC compliant check</label>
+          <input class="input input_email" id="email" type="email">
+        </div>
+        <div class="input-wrapper input-wrapper_checkbox">
+          <input class="input_consent" id="consent" type="checkbox">
+          <label class="label" for="consent">Policy consent</label>
+        </div>
+        <div class="input-wrapper input-wrapper_checkbox">
+          <input class="input_promo" id="promo" type="checkbox">
+          <label class="label" for="promo">Promo consent (same as policy in essence)</label>
+        </div>
+        <button class="button" type="submit">Fake submit</button>
+      </form>
+    </section>
   </div>
 </main>
 <footer class="footer">
+  <section> 
+    <h2>That's all folks.</h2>
+  </section>
   <script src="./assets/js/lazysizes.bundle.js"></script>
   <script src="./assets/js/main.bundle.js"></script>
 </footer></body>

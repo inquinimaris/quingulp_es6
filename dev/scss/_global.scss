@@ -32,9 +32,25 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .input{
+    border-width: 1px;
+    border-style: solid;
+    border-color: $white;
+    will-change: border-color;
+    transition: border-color 0.2s;
+    color: $white;
     &::placeholder{
         color: $color_text_primary;
         opacity: 0.6;
+    }
+    &-wrapper{
+        display: flex;
+        flex-direction: column;
+        row-gap: 8px;
+        &_checkbox{
+            flex-direction: row;
+            align-items: flex-start;
+            column-gap: 8px;
+        }
     }
     &_text{
         
@@ -45,9 +61,40 @@ h1, h2, h3, h4, h5, h6{
     &_email{
 
     }
-    &.invalid{
-        
+    &_consent, &_promo{
+        appearance: none;
+        border: 1px solid $white;
+        width: 18px;
+        aspect-ratio: 1;
+        border-radius: 2px;
+        background-color: transparent;
+        will-change: background-color;
+        transition: background-color 0.2s;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        &::before{
+            display: inline;
+            content: '\2713';
+            color: transparent;
+            will-change: color;
+            transition: color 0.2s;
+        }
+        &:checked{
+            background-color: $color_accent;
+            &::before{
+                color: $white;
+            }
+        }
+        // -moz-appearance: none;
+        // -webkit-appearance: none;
     }
+    &.invalid{
+        border-color: red;
+    }
+}
+.label{
+    cursor: pointer;
 }
 
 .button{
